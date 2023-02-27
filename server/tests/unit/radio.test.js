@@ -7,7 +7,7 @@ test('Can create a Radio object', () => {
 test('Can accept input.', () => {
   const radio = new Radio();
   radio.input("5 3\n1 1 E\nRFRFRFRF\n3 2 N\nFRRFLLFFRRFLL\n0 3 W\nLLFFFLFLFL");
-  expect(radio.input).toBe("5 3\n1 1 E\nRFRFRFRF\n3 2 N\nFRRFLLFFRRFLL\n0 3 W\nLLFFFLFLFL");
+  expect(radio.instructions).toBe("5 3\n1 1 E\nRFRFRFRF\n3 2 N\nFRRFLLFFRRFLL\n0 3 W\nLLFFFLFLFL");
 });
 
 test('Can accept input and provide output.', () => {
