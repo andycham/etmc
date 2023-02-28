@@ -8,9 +8,32 @@ module.exports = class Radio {
     this.instructions = instructions;
     this.instructionLines = instructions.split("\n");    
     this.output = "";
+    this.robots =[];
     if(this.checkInput(instructions)){
       var planetSize = this.getCoords(this.instructionLines[0]);
-      this.planet = new Planet(planetSize[0], planetSize[1])       
+      this.planet = new Planet(planetSize[0], planetSize[1]);
+
+      // Now read instructions line by line
+      var lineNo = 1;
+      while(lineNo<this.instructionLines.length){
+        // Line has initial robot coordinate and orientation
+        var line = this.instructionLines[lineNo];
+        //console.log("line " + lineNo + "=" + line);
+        var coords = this.getCoords(line);
+        var orientation = this.getOrientation(line);
+        var robot = new Robot(this.planet.maxX, this.planet.maxY, coords[0], coords[1], orientation);
+        this.robots.push(robot);
+        
+        lineNo++;
+
+        // Line has movement instructions
+        line = this.instructionLines[lineNo];        
+        lineNo++;
+        lineNo++;
+      }
+
+      //console.log("robots =" + JSON.stringify(this.robots));
+
     } else {
       throw Error("Length must by under 100 characters");
     }
@@ -44,8 +67,7 @@ module.exports = class Radio {
       return orientation;
     } else {
       throw Error("Cannot get orientation.");
-    }
-    
+    }    
   }
 
   get output(){
