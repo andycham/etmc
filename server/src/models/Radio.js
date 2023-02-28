@@ -9,7 +9,8 @@ module.exports = class Radio {
     this.instructionLines = instructions.split("\n");    
     this.output = "";
     if(this.checkInput(instructions)){
-      
+      var planetSize = this.getCoords(this.instructionLines[0]);
+      this.planet = new Planet(planetSize[0], planetSize[1])      
     } else {
       throw Error("Length must by under 100 characters");
     }
