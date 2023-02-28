@@ -9,6 +9,51 @@ module.exports = class Robot {
     this.lostCoordsList = [];
   }
 
+  set posX(value){
+    if(value>50){
+      throw(new Error("Maximum value any coordinate is 50"));
+    }
+    this.posXvalue = value;
+  }
+
+  get posX(){
+    return this.posXvalue;
+  }
+  
+  set posY(value){
+    if(value>50){
+      throw(new Error("Maximum value any coordinate is 50"));
+    }
+    this.posYvalue = value;
+  }
+
+  get posY(){
+    return this.posYvalue;
+  }
+  
+
+  set maxX(value){
+    if(value>50){
+      throw(new Error("Maximum value any coordinate is 50"));
+    }
+    this.maxXvalue = value;
+  }
+
+  get maxX(){
+    return this.maxXvalue;
+  }
+  
+  set maxY(value){
+    if(value>50){
+      throw(new Error("Maximum value any coordinate is 50"));
+    }
+    this.maxYvalue = value;
+  }
+
+  get maxY(){
+    return this.maxYvalue;
+  }
+
   turnRight(){
     // turn right
     switch(this.orientation){
