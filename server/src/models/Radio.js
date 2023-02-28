@@ -60,7 +60,7 @@ module.exports = class Radio {
     if(instructions.length < lengthMustBeUnder){
       return true;
     } else {
-      return false;
+      throw (new Error("Length of instructions must be under " + lengthMustBeUnder + " characters."));
     }
   }
 

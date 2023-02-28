@@ -57,9 +57,9 @@ test("Can create third robot from input.", () => {
 });
 
 
-test("checkInput returns false if input is 100 characters or more.", () => {
+test("checkInput returns error if input is 100 characters or more.", () => {
   const radio = new Radio();
-  expect(radio.checkInput("5 3\n1 2 E\nLR\n3 4 N\n" + "R".repeat(100))).toBe(false);
+  expect(() => {radio.checkInput("5 3\n1 2 E\nLR\n3 4 N\n" + "R".repeat(100))}).toThrow();
 });
 
 test("checkInput returns true if input is less than 100 characters.", () => {
