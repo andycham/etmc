@@ -23,10 +23,9 @@ cd etmc
 ## Installing Dependencies
 
 Ensure that Node >= 14.0.0 and npm >= 5.6 are installed.
-To install the dependencies, run the following commands from the etmc folder:
+To install the dependencies (for both the React client and Express server), run the following command from the etmc folder:
 ```
-cd server
-npm install
+npm run install-all
 ```
 
 ## Running the app

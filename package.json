@@ -1,13 +1,14 @@
 {
   "name": "etmc",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "ETMC is the Earth To Mars Communicator, which receives each sequence of robot positions and reports the final position of the robot.",
   "main": "index.js",
   "scripts": {
     "test": "cd server && npm test",
     "start": "concurrently \"npm run server\" \"npm run client\"",
     "server": "cd server && npm start",
-    "client": "cd client && npm start"
+    "client": "cd client && npm start",
+    "install-all": "npm install && cd server && npm install && cd .. && cd client && npm install"
   },
   "repository": {
     "type": "git",
