@@ -6,12 +6,17 @@ module.exports = class Radio {
   
   input(instructions){
     this.instructions = instructions;
-    this.output = "";    
+    this.output = "";
+    if(this.checkInput(instructions)){
+      //
+    } else {
+      throw Error("Length must by under 100 characters");
+    }
   }  
 
-  inputIsValid(){
-    const maxInstructionLength = 100;
-    if(this.instructions.length <= maxInstructionLength){
+  checkInput(instructions){
+    const lengthMustBeUnder = 100;
+    if(instructions.length < lengthMustBeUnder){
       return true;
     } else {
       return false;
