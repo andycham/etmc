@@ -4,7 +4,7 @@
   "description": "ETMC is the Earth To Mars Communicator, which receives each sequence of robot positions and reports the final position of the robot.",
   "main": "index.js",
   "scripts": {
-    "test": "cd server && npm test",
+    "test": "cd server && npm test && npm run e2etest",
     "start": "concurrently \"npm run server\" \"npm run client\"",
     "server": "cd server && npm start",
     "client": "cd client && npm start",
