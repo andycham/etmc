@@ -66,3 +66,10 @@ test("checkInput returns true if input is less than 100 characters.", () => {
   const radio = new Radio();  
   expect(radio.checkInput("5 3\n1 2 E\nLR\n3 4 N\n" + "R".repeat(60))).toBe(true);
 });
+
+test("getCoords returns coordinates.", () => {
+  const radio = new Radio();  
+  coords = radio.getCoords("5 3");
+  expect(coords[0]).toBe(5);
+  expect(coords[1]).toBe(3);
+});
