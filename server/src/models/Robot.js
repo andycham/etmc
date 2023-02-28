@@ -78,10 +78,12 @@ module.exports = class Robot {
           break;
         case "L":
           this.turnLeft();        
-          break
+          break;
         case "F":
-          this.moveForward();
-          break
+          if(!this.isLostCoords()){
+            this.moveForward();
+          }          
+          break;
         default:
           throw(new Error("Unknown command"));
       }
@@ -93,7 +95,7 @@ module.exports = class Robot {
     while(!this.isLost && (charPos < commandList.length)){
       var command = commandList[charPos];
       this.executeCommand(command);
-      charPos++
+      charPos++;
     }
   }
 
