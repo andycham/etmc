@@ -31,18 +31,33 @@ npm install
 
 ## Running the app
 
-To run the app
+To run the app, run the following commands from the etmc folder:
 ```
-
+npm start
 ```
 
 ## Running the tests
 
-To run the tests
+To run the tests, run the following command from the etmc folder
 ```
-
+npm test
 ```
 Test output should be:
 ```
+> etmc@1.0.0 test
+> cd server && npm test
 
+
+> server@1.0.0 test
+> jest
+
+ PASS  tests/unit/radio.test.js
+ PASS  tests/unit/planet.test.js
+ PASS  tests/unit/robot.test.js
+
+Test Suites: 3 passed, 3 total
+Tests:       17 passed, 17 total
+Snapshots:   0 total
+Time:        0.501 s, estimated 1 s
+Ran all test suites.
 ```
