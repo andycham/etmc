@@ -62,11 +62,7 @@ test("checkInput returns false if input is 100 characters or more.", () => {
   expect(radio.checkInput("5 3\n1 2 E\nLR\n3 4 N\n" + "R".repeat(100))).toBe(false);
 });
 
-<<<<<<< HEAD
 test("checkInput returns true if input is less than 100 characters.", () => {
-=======
-test("inputIsValid returns true if input is less than 100 characters.", () => {
->>>>>>> 23d95c8469832e1776bd6918981bdc26e5815819
   const radio = new Radio();  
   expect(radio.checkInput("5 3\n1 2 E\nLR\n3 4 N\n" + "R".repeat(60))).toBe(true);
 });
