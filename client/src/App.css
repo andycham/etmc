@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+
+#input {
+  height: 150px;
+  width: 400px;
+}
+
+#output {
+  height: 150px;
+  width: 400px;
+}
+
+#send {
+  font-size: 25px;
+  font-weight: 600;
+  width: 100px;
+  color: #229922;
+}

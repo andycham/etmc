@@ -71,7 +71,7 @@ module.exports = class Radio {
     if(!isNaN(posX)&&!isNaN(posY)) {
       return [parseInt(posX), parseInt(posY)];
     } else {
-      throw Error("Invalid Coordinates");
+      throw Error("Invalid Coordinates (" + posX + "," + posY);
     }    
   }
 
