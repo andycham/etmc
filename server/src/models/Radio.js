@@ -15,6 +15,7 @@ module.exports = class Radio {
 
       // Now read instructions line by line
       var lineNo = 1;
+      var lostCoordsList = [];
       while(lineNo<this.instructionLines.length){
         // Line has initial robot coordinate and orientation
         var line = this.instructionLines[lineNo];
@@ -22,13 +23,28 @@ module.exports = class Radio {
         var coords = this.getCoords(line);
         var orientation = this.getOrientation(line);
         var robot = new Robot(this.planet.maxX, this.planet.maxY, coords[0], coords[1], orientation);
+        robot.lostCoordsList = lostCoordsList;
         this.robots.push(robot);
         
         lineNo++;
 
         // Line has movement instructions
-        line = this.instructionLines[lineNo];        
+        line = this.instructionLines[lineNo];      
+        
+        // Send instructions to robot
+        robot.executeCommandList(line);
+        if(robot.isLost){
+          lostCoordsList.push([robot.posX, robot.posY, robot.orientation]);
+        }
+
+        if(this.output!=""){
+          this.output = this.output + "\n";
+        }
+        this.output = this.output + robot.output();
+        // Move to next line
         lineNo++;
+
+        // Skip blank line
         lineNo++;
       }
 
