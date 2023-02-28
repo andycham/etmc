@@ -73,3 +73,9 @@ test("getCoords returns coordinates.", () => {
   expect(coords[0]).toBe(5);
   expect(coords[1]).toBe(3);
 });
+
+
+test("getOrientation returns orientation.", () => {
+  const radio = new Radio();  
+  expect(radio.getOrientation("3 2 N")).toBe("N");
+});
