@@ -10,14 +10,14 @@ test('Can create a Robot object', () => {
 });
 
 test("isLostCoords returns true if current robot position is in lostCoordsList", () => {
-  const robot = new Robot(5, 3, 1, 2, "N");
+  const robot = new Robot(5, 3, 1, 3, "N");
   robot.lostCoordsList = [[1,3,"N"]];
   expect(robot.isLostCoords()).toBe(true);  
 });
 
 test("Robot does not move if in same position as previously lost robot.", () => {
   const robot = new Robot(5, 3, 1, 2, "N");
-  robot.lostCoordsList = [[1,3,"N"]];
+  robot.lostCoordsList = [[1,3,"N"]];  
   robot.executeCommand("F");  
   robot.executeCommand("F");
   expect(robot.posX).toBe(1);
