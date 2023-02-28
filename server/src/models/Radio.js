@@ -6,9 +6,10 @@ module.exports = class Radio {
   
   input(instructions){
     this.instructions = instructions;
+    this.instructionLines = instructions.split("\n");    
     this.output = "";
     if(this.checkInput(instructions)){
-      //
+      
     } else {
       throw Error("Length must by under 100 characters");
     }
@@ -21,6 +22,17 @@ module.exports = class Radio {
     } else {
       return false;
     }
+  }
+
+  getCoords(line){
+    var lineParts = line.split(" ");
+    var posX = lineParts[0];
+    var posY = lineParts[1];
+    if(!isNaN(posX)&&!isNaN(posY)) {
+      return [parseInt(posX), parseInt(posY)];
+    } else {
+      throw Error("Invalid Coordinates");
+    }    
   }
 
   get output(){
