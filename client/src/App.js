@@ -37,6 +37,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <div>
+          <h2>ETMC - Earth To Mars Communicator</h2>
           <div>Input</div>
           <div><textarea id="input" value={input} onChange={handleInputChange} /></div>
           <div><button id="send" onClick={sendClick} >Send</button></div>
