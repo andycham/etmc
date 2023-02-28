@@ -93,20 +93,20 @@ npm test
 ```
 Test output should be:
 ```
-> etmc@1.0.0 test
+> etmc@1.0.1 test
 > cd server && npm test
 
 
-> server@1.0.0 test
+> etmc-server@1.0.1 test
 > jest
 
  PASS  tests/unit/radio.test.js
- PASS  tests/unit/planet.test.js
  PASS  tests/unit/robot.test.js
-
-Test Suites: 3 passed, 3 total
-Tests:       17 passed, 17 total
+ PASS  tests/unit/planet.test.js
+                                                                                                                                                                                                                       
+Test Suites: 3 passed, 3 total                                                                                                                                                                                         
+Tests:       21 passed, 21 total
 Snapshots:   0 total
-Time:        0.501 s, estimated 1 s
+Time:        0.657 s, estimated 1 s
 Ran all test suites.
 ```
