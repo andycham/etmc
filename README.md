@@ -87,14 +87,15 @@ The app should output the following:
 
 ## Running the tests
 
-To run the tests, run the following command from the etmc folder
+To run the unit tests and e2e tests, run the following command from the etmc folder
 ```
 npm test
 ```
 Test output should be:
 ```
+
 > etmc@1.0.1 test
-> cd server && npm test
+> cd server && npm test && npm run e2etest
 
 
 > etmc-server@1.0.1 test
@@ -103,10 +104,112 @@ Test output should be:
  PASS  tests/unit/radio.test.js
  PASS  tests/unit/robot.test.js
  PASS  tests/unit/planet.test.js
-                                                                                                                                                                                                                       
-Test Suites: 3 passed, 3 total                                                                                                                                                                                         
+                                                                                                         
+Test Suites: 3 passed, 3 total                                                                           
 Tests:       21 passed, 21 total
 Snapshots:   0 total
-Time:        0.657 s, estimated 1 s
+Time:        0.512 s, estimated 1 s
 Ran all test suites.
+
+> etmc-server@1.0.1 e2etest
+> npx cypress run --browser chrome
+
+
+
+====================================================================================================
+
+  (Run Starting)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐     
+  │ Cypress:        12.7.0                                                                         │     
+  │ Browser:        Chrome 110 (headless)                                                          │     
+  │ Node Version:   v18.13.0 (C:\Program Files\nodejs\node.exe)                                    │     
+  │ Specs:          2 found (001_main_heading.feature, 002_get_output_from_input.feature)          │     
+  │ Searched:       **/*.feature                                                                   │     
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘     
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────     
+
+  Running:  001_main_heading.feature                                                        (1 of 2)     
+
+
+  main_heading
+    √ Heading should show when opening the app. (365ms)
+
+
+  1 passing (387ms)
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐     
+  │ Tests:        1                                                                                │     
+  │ Passing:      1                                                                                │     
+  │ Failing:      0                                                                                │     
+  │ Pending:      0                                                                                │     
+  │ Skipped:      0                                                                                │     
+  │ Screenshots:  0                                                                                │     
+  │ Video:        true                                                                             │     
+  │ Duration:     0 seconds                                                                        │     
+  │ Spec Ran:     001_main_heading.feature                                                         │     
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘     
+
+
+  (Video)
+
+  -  Started processing:  Compressing to 32 CRF
+  -  Finished processing: 0 seconds
+
+  -  Video output: C:\dev\etmc\server\cypress\videos\001_main_heading.feature.mp4
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────     
+
+  Running:  002_get_output_from_input.feature                                               (2 of 2)     
+
+
+  get_output_from_input
+    √ Get output from input. (1565ms)
+
+
+  1 passing (2s)
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐     
+  │ Tests:        1                                                                                │     
+  │ Passing:      1                                                                                │     
+  │ Failing:      0                                                                                │     
+  │ Pending:      0                                                                                │     
+  │ Skipped:      0                                                                                │     
+  │ Screenshots:  0                                                                                │     
+  │ Video:        true                                                                             │     
+  │ Duration:     1 second                                                                         │     
+  │ Spec Ran:     002_get_output_from_input.feature                                                │     
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘     
+
+
+  (Video)
+
+  -  Started processing:  Compressing to 32 CRF
+  -  Finished processing: 0 seconds
+
+  -  Video output: C:\dev\etmc\server\cypress\videos\002_get_output_from_input.feature.mp4
+
+
+====================================================================================================
+
+  (Run Finished)
+
+
+       Spec                                              Tests  Passing  Failing  Pending  Skipped
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ √  001_main_heading.feature                 382ms        1        1        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ √  002_get_output_from_input.feature        00:01        1        1        -        -        - │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+    √  All specs passed!                        00:01        2        2        -        -        -
+
 ```
