@@ -1,0 +1,25 @@
+{
+  "name": "etmc",
+  "version": "1.0.0",
+  "description": "ETMC is the Earth To Mars Communicator, which receives each sequence of robot positions and reports the final position of the robot.",
+  "main": "index.js",
+  "scripts": {
+    "test": "cd server && npm test",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd server && npm start",
+    "client": "cd client && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andycham/etmc.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andycham/etmc/issues"
+  },
+  "homepage": "https://github.com/andycham/etmc#readme",
+  "dependencies": {
+    "concurrently": "^7.6.0"
+  }
+}
