@@ -87,7 +87,12 @@ The app should output the following:
 
 ## Running the tests
 
-To run the unit tests and e2e tests, run the following command from the etmc folder
+To run the unit tests and e2e tests, you will need to first run the app (for the e2e tests) by typing the following command from the etmc folder:
+```
+npm start
+```
+
+In a separate command prompt, while the application is running, type the following command from the etmc folder:
 ```
 npm test
 ```
